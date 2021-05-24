@@ -5,15 +5,21 @@ It uses the Tuya Cloud API to get the device state and update it in Homebridge.
 
 You can support me buy sending some bucks my way on paypal: [right here](https://paypal.me/kakiseStash)
 
+## How to install
+You can install this plugin like you'd install any other plugin via:
+```npm i homebridge-tuya-door-cloud -g```
+
+## Disclaimer
+
 ### What does this plugin NOT do ?
 It's not a replacement for a proper security system (even though that's how I use it myself).  
 It doesn't allow you to open/close a door, even though that's how Homekit want's a door to operate.  
-It doesn't send your secret key over to Internet.  
+It doesn't send your secret key over to Internet, it only uses it to sign the requests to the Tuya Cloud API.
 It doesn't watch your sensor in realtime.
 
 ### What does this plugin do ?
 It calls the Tuya Cloud API to update the door state and push it directly to Homebridge.  
-It checks for the current door state in the background once every 500ms. Per my personal testing, this was as fast as the Tuya App notifications and works fine. The request are very small in size so it shouldn't use your internet too much. Still, I'd recommend to have a no data cap connection.
+It checks for the current door state in the background once every 500ms. Per my personal testing, this was as fast as the Tuya App notifications and works fine. The requests are very small in size so it shouldn't use your internet too much. Still, I'd recommend to have a no data cap connection.
 
 ## How to use it
 You need create an account on [iot.tuya.com](https://iot.tuya.com). Then, create a new Cloud project, with the industry type set to **"Smart Home"**. Go to "API" inside your project, add the "Authorization" and "Smart Home Devices Management" (don't worry, they are free).
