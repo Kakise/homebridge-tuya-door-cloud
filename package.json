@@ -1,6 +1,6 @@
 {
   "displayName": "Tuya Cloud Door Sensor",
-  "name": "homebridge-tuya-door-cloud",
+  "name": "@kakise/homebridge-tuya-door-cloud",
   "version": "1.0.2",
   "description": "This plugin uses the Tuya Cloud API to fetch the state of door sensors",
   "license": "GPL-3.0",
