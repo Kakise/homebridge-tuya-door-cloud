@@ -2,6 +2,8 @@
   "pluginAlias": "TuyaDoorCloud",
   "pluginType": "platform",
   "singular": true,
+  "headerDisplay": "Homebridge plugin for door sensors using the Tuya Cloud API.",
+  "footerDisplay": "If you have any suggestions, please open an issue on [GitHub](https://github.com/Kakise/homebridge-tuya-door-cloud/issues).",
   "schema": {
     "type": "object",
     "properties": {
@@ -9,84 +11,86 @@
         "title": "Name",
         "type": "string",
         "required": true,
-        "default": "Door Sensor Platform"
-      }
-    },
-    "options": {
-      "title": "Options",
-      "type": "object",
-      "required": true,
-      "properties": {
-        "access_id": {
-          "title": "Access ID",
-          "type": "string",
-          "required": true
-        },
-        "secret_id": {
-          "title": "Secret ID",
-          "type": "string",
-          "required": true
-        },
-        "cloudCode": {
-          "title": "Cloud Region",
-          "type": "string",
-          "description": "The cloud region where your product is located",
-          "default": "form",
-          "oneOf": [
-            {
-              "title": "Europe",
-              "enum": [
-                "eu"
-              ]
-            },
-            {
-              "title": "China",
-              "enum": [
-                "cn"
-              ]
-            },
-            {
-              "title": "America",
-              "enum": [
-                "us"
-              ]
-            },
-            {
-              "title": "India",
-              "enum": [
-                "in"
-              ]
-            },
-            {
-              "title": "America",
-              "enum": [
-                "us"
-              ]
-            }
-          ],
-          "required": true
-        }
-      }
-    },
-    "defaults": {
-      "title": "Device Settings",
-      "description": "Here you can configure settings for each of your devices.",
-      "type": "array",
-      "items": {
-        "title": "Devices",
+        "default": "DoorSensorPlatform",
+        "description": "You shouldn't need to change this."
+      },
+      "options": {
+        "title": "Options",
         "type": "object",
+        "required": true,
         "properties": {
-          "display_name": {
-            "title": "Displayed name of the device",
+          "access_id": {
+            "title": "Access ID",
             "type": "string",
-            "description": "Here you can name your sensor",
+            "description": "Found in your Tuya IoT account",
             "required": true
           },
-          "device_id": {
-            "title": "Device name or id",
+          "secret_id": {
+            "title": "Secret ID",
             "type": "string",
-            "description": "Can be found in your platform app (device info -> virtual ID) and is exposed during plugin boot (use the Tuya ID)",
             "required": true
+          },
+          "cloudCode": {
+            "title": "Cloud Region",
+            "type": "string",
+            "description": "The cloud region where your account is located",
+            "default": "form",
+            "oneOf": [
+              {
+                "title": "Europe",
+                "enum": [
+                  "eu"
+                ]
+              },
+              {
+                "title": "China",
+                "enum": [
+                  "cn"
+                ]
+              },
+              {
+                "title": "America",
+                "enum": [
+                  "us"
+                ]
+              },
+              {
+                "title": "India",
+                "enum": [
+                  "in"
+                ]
+              },
+              {
+                "title": "America",
+                "enum": [
+                  "us"
+                ]
+              }
+            ],
+            "required": true
+          }
+        }
+      },
+      "defaults": {
+        "title": "Device Settings",
+        "description": "Here you can configure settings for each of your devices.",
+        "type": "array",
+        "items": {
+          "title": "Devices",
+          "type": "object",
+          "properties": {
+            "display_name": {
+              "title": "Displayed name of the device",
+              "type": "string",
+              "description": "Here you can name your sensor",
+              "required": true
+            },
+            "device_id": {
+              "title": "Device id",
+              "type": "string",
+              "description": "Can be found in your platform app (device info -> virtual ID) and in your IoT product information",
+              "required": true
+            }
           }
         }
       }
